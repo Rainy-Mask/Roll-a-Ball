@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BallControl : MonoBehaviour
@@ -36,8 +37,11 @@ public class BallControl : MonoBehaviour
         
         //Debug.Log("horizontal " + horizontal); //yatay
         //Debug.Log("vertical " + vertical); //dikey
+        
+    }
 
-
-
+    void OnTriggerEnter(Collider other)
+    {
+        Destroy(other.gameObject);
     }
 }
