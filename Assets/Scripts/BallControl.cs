@@ -32,6 +32,7 @@ public class BallControl : MonoBehaviour
         Vector3 vector = new Vector3(horizontal, 0, vertical);
 
         physics.AddForce(vector * speed);
+        Debug.Log(transform.position);
         
         //Debug.Log("horizontal " + horizontal); //yatay
         //Debug.Log("vertical " + vertical); //dikey
