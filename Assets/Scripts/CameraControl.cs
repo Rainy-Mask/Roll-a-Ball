@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject ball;
+    public Vector3 distance;
     void Start()
     {
-        
+        distance = transform.position - ball.transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        transform.position = ball.transform.position + distance;
     }
 }
