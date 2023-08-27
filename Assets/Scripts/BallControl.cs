@@ -42,6 +42,7 @@ public class BallControl : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
+        //Destroy(other.gameObject); çok veri yediği için tercih edilmez, eğer tekrar kullanılacaksa obje 
+        other.gameObject.SetActive(false); // optimizasyon için daga sağlıklı
     }
 }
