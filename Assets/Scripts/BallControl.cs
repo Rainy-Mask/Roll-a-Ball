@@ -11,16 +11,27 @@ public class BallControl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     { 
         //transform.Translate(0,0,10); 
         //transform.Rotate(0,0,-0.1f);
-        if (Input.GetKeyDown(KeyCode.Escape))
+        /*if (Input.GetKeyDown(KeyCode.Escape))
         {
             Debug.Log("ESC tuşuna basıldı!");
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("E tuşuna basıldı!");
+        }*/
+
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
         
-            
+        Debug.Log("horizontal " + horizontal); //yatay
+        Debug.Log("vertical " + vertical); //dikey
+
+
 
     }
 }
