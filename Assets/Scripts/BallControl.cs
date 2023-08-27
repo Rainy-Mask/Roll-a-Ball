@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class BallControl : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int speed;
+    public Rigidbody physics;
     void Start()
     {
-       //transform.Translate(0,0,10); 
+        physics = GetComponent<Rigidbody>();
+        //transform.Translate(0,0,10); 
     }
 
     // Update is called once per frame
@@ -27,9 +29,12 @@ public class BallControl : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
+        Vector3 vector = new Vector3(horizontal, 0, vertical);
+
+        physics.AddForce(vector * speed);
         
-        Debug.Log("horizontal " + horizontal); //yatay
-        Debug.Log("vertical " + vertical); //dikey
+        //Debug.Log("horizontal " + horizontal); //yatay
+        //Debug.Log("vertical " + vertical); //dikey
 
 
 
