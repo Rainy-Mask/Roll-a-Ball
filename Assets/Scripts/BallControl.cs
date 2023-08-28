@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallControl : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class BallControl : MonoBehaviour
     public int point;
     public Rigidbody physics;
     public int numberOfObject;
+    public Text pointText;
+    public Text finishText;
     void Start()
     {
         physics = GetComponent<Rigidbody>();
@@ -48,11 +51,13 @@ public class BallControl : MonoBehaviour
         other.gameObject.SetActive(false); // optimizasyon için daga sağlıklı
         //point += 1;
         point++;
-        Debug.Log("Counter = " + point);
+        //Debug.Log("Counter = " + point);
+        pointText.text = "Point: " + point;
 
         if (point == numberOfObject)
         {
-            Debug.Log("Oyun Bitti!");
+            //Debug.Log("Oyun Bitti!");
+            finishText.gameObject.SetActive(true);
         }
     }
 }
