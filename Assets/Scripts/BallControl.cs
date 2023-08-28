@@ -6,7 +6,9 @@ using UnityEngine;
 public class BallControl : MonoBehaviour
 {
     public int speed;
+    public int point;
     public Rigidbody physics;
+    public int numberOfObject;
     void Start()
     {
         physics = GetComponent<Rigidbody>();
@@ -44,5 +46,13 @@ public class BallControl : MonoBehaviour
     {
         //Destroy(other.gameObject); çok veri yediği için tercih edilmez, eğer tekrar kullanılacaksa obje 
         other.gameObject.SetActive(false); // optimizasyon için daga sağlıklı
+        //point += 1;
+        point++;
+        Debug.Log("Counter = " + point);
+
+        if (point == numberOfObject)
+        {
+            Debug.Log("Oyun Bitti!");
+        }
     }
 }
